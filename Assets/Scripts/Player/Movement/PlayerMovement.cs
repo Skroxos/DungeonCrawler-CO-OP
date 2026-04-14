@@ -1,11 +1,12 @@
 using System;
 using DungeonCrawler.Player.Config;
 using DungeonCrawler.Player.Input;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Movement
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : NetworkBehaviour
     {
         [SerializeField] private InputReader inputReader;
         [SerializeField] private PlayerConfig playerConfig;
@@ -13,6 +14,16 @@ namespace DungeonCrawler.Player.Movement
 
         
         private Vector3 _moveDirection;
+
+        public override void OnNetworkSpawn()
+        {
+            if (!IsOwner)
+            {
+                enabled = false;
+                return;
+            }
+        }
+        
         private void OnEnable()
         {
             inputReader.MoveEvent += Move;

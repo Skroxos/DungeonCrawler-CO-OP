@@ -25,7 +25,7 @@ namespace DungeonCrawler.Player.Input
         private void OnDisable()
         {
             _playerInput.Movement.Disable();
-            _playerInput.Movement.Disable();
+            _playerInput.Core.Disable();
         }
     
         public void OnNewaction(InputAction.CallbackContext context)
