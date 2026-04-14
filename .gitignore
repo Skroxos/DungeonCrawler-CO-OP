@@ -101,4 +101,11 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 .idea/ 
  
+
+# Ignorování HotReload složky v Assets a jejího meta souboru
+/[Aa]ssets/HotReload/
+/[Aa]ssets/HotReload.meta
+
+# Ignorování HotReload balíčku, pokud je přidán lokálně ve složce Packages
+/[Pp]ackages/com.singularitygroup.hotreload/
  
