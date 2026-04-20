@@ -95,7 +95,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5585157601898139288}
-  - component: {fileID: 3302893061429792936}
+  - component: {fileID: 6101163189405847308}
+  - component: {fileID: 4228038618969995045}
+  - component: {fileID: 362625910486659098}
+  - component: {fileID: 8503507432404072654}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -119,28 +122,102 @@ Transform:
   - {fileID: 4682442278876679574}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &3302893061429792936
-CharacterController:
+--- !u!114 &6101163189405847308
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9012108554161853475}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb269cf45663d1942a8dd881be395a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!114 &4228038618969995045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012108554161853475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1786736954
+  InScenePlacedSourceGlobalObjectIdHash: 3416532468
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &362625910486659098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012108554161853475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed1892af06746749b8c5a8b9388ca9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  target: {fileID: 0}
+  agent: {fileID: 8503507432404072654}
+  availableStates:
+  - rid: 2397255769194496192
+  - rid: 2397255769194496191
+  - rid: 2397255769194496193
+  CurrentNetState:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2397255769194496191
+      type: {class: ChaseState, ns: DungeonCrawler.Enemy.AI.States, asm: Assembly-CSharp}
+      data:
+        _stopDistance: 5
+        _chaseSpeed: 3
+    - rid: 2397255769194496192
+      type: {class: IdleState, ns: DungeonCrawler.Enemy.AI.States, asm: Assembly-CSharp}
+      data: 
+    - rid: 2397255769194496193
+      type: {class: AttackState, ns: DungeonCrawler.Enemy.AI.States, asm: Assembly-CSharp}
+      data:
+        _attackRange: 2
+--- !u!195 &8503507432404072654
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012108554161853475}
+  m_Enabled: 1
+  m_AgentTypeID: 0
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
