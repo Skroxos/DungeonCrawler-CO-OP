@@ -1,10 +1,22 @@
-﻿using UnityEngine;
+﻿using DungeonCrawler.Interfaces.IDamageable;
+using UnityEngine;
 
-[CreateAssetMenu(menuName="Combat/GroundSlamStrategy")]
-public class GroundSlamStrategySO : AbilityStrategySO
+namespace DungeonCrawler.Player.Combat.Attacks.Warrior
 {
-    public override void UseAbility(GameObject caller)
+    [CreateAssetMenu(menuName="Combat/GroundSlamStrategy")]
+    public class GroundSlamStrategySO : AbilityStrategySO
     {
-        Debug.Log("Using Ground Slam!");
+        public override void UseAbility(GameObject caller)
+        {
+            var hitColliders = Physics.OverlapSphere(caller.transform.position, 1f);
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.TakeDamage(10);
+                }
+            }
+        
+        }
     }
 }
