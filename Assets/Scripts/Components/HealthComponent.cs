@@ -1,22 +1,25 @@
 using DungeonCrawler.Interfaces.IDamageable;
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour, IDamageable
+namespace DungeonCrawler.Components
 {
-    [SerializeField] private float health = 100f;
-
-    public void TakeDamage(float damage)
+    public class HealthComponent : MonoBehaviour, IDamageable
     {
-        health -= damage;
-        if (health <= 0f)
+        [SerializeField] private float health = 100f;
+
+        public void TakeDamage(float damage)
         {
-            Die();
+            health -= damage;
+            if (health <= 0f)
+            {
+                Die();
+            }
         }
-    }
 
-    private void Die()
-    {
-        Debug.Log($"{gameObject.name} has died.");
-        Destroy(gameObject);
+        private void Die()
+        {
+            Debug.Log($"{gameObject.name} has died.");
+            Destroy(gameObject);
+        }
     }
 }
