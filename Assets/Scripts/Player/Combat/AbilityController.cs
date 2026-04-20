@@ -1,32 +1,34 @@
-using System;
 using System.Collections.Generic;
 using DungeonCrawler.Player.Combat.Attacks;
 using UnityEngine;
 
-public class AbilityController : MonoBehaviour
+namespace DungeonCrawler.Player.Combat
 {
-    [SerializeField] private List<AbilityStrategySO> abilities;
-    private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
-
-    public void TryCastAbility(int abilityIndex)
+    public class AbilityController : MonoBehaviour
     {
-        if (abilityIndex < 0 || abilityIndex >= abilities.Count) return;
-        AbilityStrategySO ability = abilities[abilityIndex];
-        if (ability == null) return;
+        [SerializeField] private List<AbilityStrategySO> abilities;
+        private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
 
-        if (!_lastCastTimes.ContainsKey(abilityIndex))
+        public void TryCastAbility(int abilityIndex)
         {
-            _lastCastTimes[abilityIndex] = 0f;
-        }
+            if (abilityIndex < 0 || abilityIndex >= abilities.Count) return;
+            AbilityStrategySO ability = abilities[abilityIndex];
+            if (ability == null) return;
 
-        float readyTime = _lastCastTimes[abilityIndex] + ability.Cooldown;
-        if (Time.time < readyTime)
-        {
-            Debug.Log($"Ability {ability.AbilityName} is on cooldown! Ready in {readyTime - Time.time:F1}s");
-            return;
-        }
+            if (!_lastCastTimes.ContainsKey(abilityIndex))
+            {
+                _lastCastTimes[abilityIndex] = 0f;
+            }
+
+            float readyTime = _lastCastTimes[abilityIndex] + ability.Cooldown;
+            if (Time.time < readyTime)
+            {
+                Debug.Log($"Ability {ability.AbilityName} is on cooldown! Ready in {readyTime - Time.time:F1}s");
+                return;
+            }
         
-        ability.UseAbility(gameObject);
-        _lastCastTimes[abilityIndex] = Time.time;
-}
+            ability.UseAbility(gameObject);
+            _lastCastTimes[abilityIndex] = Time.time;
+        }
+    }
 }

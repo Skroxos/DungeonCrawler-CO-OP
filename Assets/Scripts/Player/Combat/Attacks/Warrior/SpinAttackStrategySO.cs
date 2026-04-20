@@ -1,12 +1,13 @@
 ﻿using DungeonCrawler.Interfaces.IDamageable;
+using DungeonCrawler.Player.Combat.Attacks;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
 {
-    [CreateAssetMenu(menuName="Combat/Warrior/GroundSlamStrategy")]
-    public class GroundSlamStrategySO : AbilityStrategySO
+    [CreateAssetMenu(menuName="Combat/Warrior/SpinAttackStrategy")]
+    public class SpinAttackStrategySO : AbilityStrategySO
     {
-        [Header("Ground Slam Data")]
+        [Header("Spin Attack Data")]
         public float BaseDamage;
         public float AreaRadius;
         public override void UseAbility(GameObject caller)
@@ -19,7 +20,6 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
                     damageable.TakeDamage(BaseDamage);
                 }
             }
-        
         }
     }
 }

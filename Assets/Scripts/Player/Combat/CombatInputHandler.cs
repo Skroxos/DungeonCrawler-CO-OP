@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using DungeonCrawler.Player.Combat.Attacks;
 using DungeonCrawler.Player.Input;
 using UnityEngine;
 
@@ -49,17 +47,17 @@ namespace DungeonCrawler.Player.Combat
     
         private void HandleAbility2()
         {
-            Debug.Log("Ability 2 Triggered");
+            _abilityController.TryCastAbility(1);
         }
     
         private void HandleAbility3()
         {
-            Debug.Log("Ability 3 Triggered");
+            _abilityController.TryCastAbility(2);
         }
     
         private void HandleAbility4()
         {
-            Debug.Log("Ability 4 Triggered");
+            _abilityController.TryCastAbility(3);
         }
 
         private void HandleDash()
