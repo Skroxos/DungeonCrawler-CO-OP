@@ -1,29 +1,28 @@
 ﻿using System;
-using DungeonCrawler.Enemy.AI;
-using DungeonCrawler.Enemy.AI.States;
+using UnityEngine;
 
 namespace DungeonCrawler.Enemy.AI.States
 {
     [Serializable]
     public class ChaseState : EnemyState
     {   
+        [SerializeField] private float _stopDistance = 5f;
+        [SerializeField] private float _chaseSpeed = 3f;
+        
         public override EnemyStateType StateType => EnemyStateType.Chase;
         public override void OnEnter(EnemyBrain brain)
         {
-            base.OnEnter(brain);
-            Console.WriteLine("Entering Chase State");
+            Debug.Log("Entering Chase State");
         }
 
         public override void OnUpdate(EnemyBrain brain)
         {
-            base.OnUpdate(brain);
-            Console.WriteLine("Chasing...");
+            Debug.Log("Updating Chase State");
         }
 
         public override void OnExit(EnemyBrain brain)
         {
-            base.OnExit(brain);
-            Console.WriteLine("Exiting Chase State");
+           Debug.Log("Exiting Chase State");
         }
     }
 }

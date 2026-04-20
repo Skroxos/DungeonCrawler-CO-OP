@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2205812705
+  GlobalObjectIdHash: 3096909736
   InScenePlacedSourceGlobalObjectIdHash: 2205812705
   DeferredDespawnTick: 0
   Ownership: 1
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f514c9d40b66d4348a6a4eeabb5adfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoint: {fileID: 3772371048174727780}
 --- !u!1 &5042891397256948662
 GameObject:
   m_ObjectHideFlags: 0

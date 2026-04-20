@@ -1,22 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using DungeonCrawler.Enemy.AI;
+using DungeonCrawler.Enemy.AI.States;
+using UnityEngine;
 
 namespace DungeonCrawler.Enemy.AI.States
 {
-    public class AttackState : IState
+    [Serializable]
+    public class AttackState : EnemyState
     {
-        public void Enter(IState state)
+        [SerializeField] private float _attackRange = 2f;
+        public override EnemyStateType StateType => EnemyStateType.Attack;
+        public override void OnEnter(EnemyBrain brain)
         {
             Debug.Log("Entering Attack State");
         }
 
-        public void Tick(IState state)
+        public override void OnUpdate(EnemyBrain brain)
         {
-            Debug.Log("Attacking...");
+           Debug.Log("Attacking...");
         }
 
-        public void Exit(IState state)
+        public override void OnExit(EnemyBrain brain)
         {
-            Debug.Log("Exiting Attack State");
+            Debug.Log("Exiting...");
         }
     }
 }

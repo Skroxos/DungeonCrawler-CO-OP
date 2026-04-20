@@ -1,22 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DungeonCrawler.Enemy.AI.States
 {
-    public class IdleState : IState
+    [Serializable]
+    public class IdleState : EnemyState
     {
-        public void Enter(IState state)
+        public override EnemyStateType StateType => EnemyStateType.Idle;
+        [SerializeField] private float _sightRange = 10;
+        public override void OnEnter(EnemyBrain brain)
         {
             Debug.Log("Entering Idle State");
         }
 
-        public void Tick(IState state)
+        public override void OnUpdate(EnemyBrain brain)
         {
             Debug.Log("Idling...");
         }
 
-        public void Exit(IState state)
+        public override void OnExit(EnemyBrain brain)
         {
-            Debug.Log("Exiting Idle State");
+            Debug.Log("Exited Idle State");
         }
     }
 }
