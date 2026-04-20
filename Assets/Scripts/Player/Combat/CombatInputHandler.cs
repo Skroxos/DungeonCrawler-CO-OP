@@ -10,7 +10,7 @@ namespace DungeonCrawler.Player.Combat
         [SerializeField]
         private InputReader _inputReader;
         [SerializeField]
-        private List<AbilityStrategySO> _abilities;
+        private AbilityController _abilityController;
 
         private void Awake()
         {
@@ -44,7 +44,7 @@ namespace DungeonCrawler.Player.Combat
 
         private void HandleAbility1()
         {
-            _abilities[0].UseAbility(gameObject);
+            _abilityController.TryCastAbility(0);
         }
     
         private void HandleAbility2()
