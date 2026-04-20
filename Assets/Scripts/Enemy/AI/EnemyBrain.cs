@@ -12,12 +12,12 @@ namespace DungeonCrawler.Enemy.AI
     {
         [Header("Data")]
         public Transform target;
+        [HideInInspector]
         public NavMeshAgent agent;
         
         
         [Header("State Machine")]
-        [SerializeReference, SubclassSelector] 
-        [SerializeField]
+        [SerializeReference, SubclassSelector, SerializeField]
         private List<EnemyState> availableStates = new  List<EnemyState>();
         
         public NetworkVariable<EnemyStateType> CurrentNetState = new NetworkVariable<EnemyStateType>(

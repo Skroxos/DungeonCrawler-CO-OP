@@ -17,7 +17,14 @@ namespace DungeonCrawler.Enemy.AI.States
 
         public override void OnUpdate(EnemyBrain brain)
         {
-           Debug.Log("Attacking...");
+            if (brain.target != null)
+            {
+                if (Vector3.Distance(brain.transform.position, brain.target.position) > _attackRange)
+                {
+                    brain.SwitchState(EnemyStateType.Chase);
+                }
+            }
+            Debug.Log("Attacking...");
         }
 
         public override void OnExit(EnemyBrain brain)

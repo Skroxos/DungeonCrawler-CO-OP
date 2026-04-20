@@ -15,6 +15,10 @@ namespace DungeonCrawler.Enemy.AI.States
 
         public override void OnUpdate(EnemyBrain brain)
         {
+            if (brain.target != null && Vector3.Distance(brain.transform.position, brain.target.position) <= _sightRange)
+            {
+                brain.SwitchState(EnemyStateType.Chase);
+            }
             Debug.Log("Idling...");
         }
 

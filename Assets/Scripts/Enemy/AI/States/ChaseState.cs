@@ -6,8 +6,8 @@ namespace DungeonCrawler.Enemy.AI.States
     [Serializable]
     public class ChaseState : EnemyState
     {   
-        [SerializeField] private float _stopDistance = 5f;
-        [SerializeField] private float _chaseSpeed = 3f;
+        [SerializeField] private float _stopDistance;
+        [SerializeField] private float _chaseSpeed;
         
         public override EnemyStateType StateType => EnemyStateType.Chase;
         public override void OnEnter(EnemyBrain brain)
@@ -17,6 +17,15 @@ namespace DungeonCrawler.Enemy.AI.States
 
         public override void OnUpdate(EnemyBrain brain)
         {
+            if (brain.target != null)
+            {
+                brain.agent.SetDestination(brain.target.position);
+                if (brain.agent.remainingDistance < _stopDistance)
+                {
+                    brain.SwitchState(EnemyStateType.Attack);
+                }
+            }
+
             Debug.Log("Updating Chase State");
         }
 
