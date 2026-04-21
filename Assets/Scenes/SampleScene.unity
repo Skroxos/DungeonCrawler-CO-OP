@@ -466,13 +466,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: abilities.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 652443403479460792, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: 'abilities.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e7ff6fc7876f2d94ba24fe72af256a5a, type: 2}
+      objectReference: {fileID: 11400000, guid: 45335316733a4474d939e0b92492bbc3, type: 2}
+    - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
+      propertyPath: 'abilities.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e4c9c142d9d29148a9571eab466781e, type: 2}
+    - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
+      propertyPath: 'abilities.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a7f576ae82c0d743bdd3c5b68b1f447, type: 2}
     - target: {fileID: 6562570064812436173, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -517,17 +521,13 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3407418852
       objectReference: {fileID: 0}
-    - target: {fileID: 6693574673737833455, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2996373055
-      objectReference: {fileID: 0}
     - target: {fileID: 8628072829612553941, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
       propertyPath: m_Name
       value: Ranger
       objectReference: {fileID: 0}
     - target: {fileID: 8628072829612553941, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -599,7 +599,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1139272804}
-    PlayerPrefab: {fileID: 4205542708333847511, guid: 633e76bb1254bf64e892751065878600, type: 3}
+    PlayerPrefab: {fileID: 7517435653014700515, guid: 35f48ddca8757e04cba3d701f24a6268, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 11dc3f12c5775c04a9bb6ae7d877abae, type: 2}
