@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using DungeonCrawler.Player.Combat.Attacks;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat
 {
-    public class AbilityController : MonoBehaviour
+    public class AbilityController : NetworkBehaviour
     {
         [SerializeField] private List<AbilityStrategySO> abilities;
         private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
 
-        public void TryCastAbility(int abilityIndex)
+        [ServerRpc]
+        public void TryCastAbilityServerRPC(int abilityIndex)
         {
             if (abilityIndex < 0 || abilityIndex >= abilities.Count) return;
             AbilityStrategySO ability = abilities[abilityIndex];

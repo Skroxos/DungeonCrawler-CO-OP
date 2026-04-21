@@ -1,16 +1,18 @@
 using DungeonCrawler.Interfaces.IDamageable;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace DungeonCrawler.Components
 {
-    public class HealthComponent : MonoBehaviour, IDamageable
+    public class HealthComponent : NetworkBehaviour, IDamageable
     {
-        [SerializeField] private float health = 100f;
+        [SerializeField] private NetworkVariable<float> currentHealth = new NetworkVariable<float>();
 
         public void TakeDamage(float damage)
         {
-            health -= damage;
-            if (health <= 0f)
+            if (!IsServer)  return;
+            currentHealth.Value -= damage;
+            if (currentHealth.Value <= 0f)
             {
                 Die();
             }
