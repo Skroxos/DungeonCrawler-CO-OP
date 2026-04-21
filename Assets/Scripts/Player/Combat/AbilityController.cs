@@ -11,7 +11,7 @@ namespace DungeonCrawler.Player.Combat
         private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
 
         [ServerRpc]
-        public void TryCastAbilityServerRPC(int abilityIndex)
+        public void TryCastAbilityServerRpc(int abilityIndex)
         {
             if (abilityIndex < 0 || abilityIndex >= abilities.Count) return;
             AbilityStrategySO ability = abilities[abilityIndex];

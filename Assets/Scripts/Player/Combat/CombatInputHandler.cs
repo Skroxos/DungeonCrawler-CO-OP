@@ -50,22 +50,22 @@ namespace DungeonCrawler.Player.Combat
 
         private void HandleAbility1()
         {
-            _abilityController.TryCastAbilityServerRPC(0);
+            _abilityController.TryCastAbilityServerRpc(0);
         }
     
         private void HandleAbility2()
         {
-            _abilityController.TryCastAbilityServerRPC(1);
+            _abilityController.TryCastAbilityServerRpc(1);
         }
     
         private void HandleAbility3()
         {
-            _abilityController.TryCastAbilityServerRPC(2);
+            _abilityController.TryCastAbilityServerRpc(2);
         }
     
         private void HandleAbility4()
         {
-            _abilityController.TryCastAbilityServerRPC(3);
+            _abilityController.TryCastAbilityServerRpc(3);
         }
 
         private void HandleDash()

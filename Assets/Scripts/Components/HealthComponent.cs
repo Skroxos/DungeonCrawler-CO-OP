@@ -21,7 +21,7 @@ namespace DungeonCrawler.Components
         private void Die()
         {
             Debug.Log($"{gameObject.name} has died.");
-            Destroy(gameObject);
+            GetComponent<NetworkObject>().Despawn(true);
         }
     }
 }
