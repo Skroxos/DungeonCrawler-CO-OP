@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
 {
+    [CreateAssetMenu(menuName = "Combat/Warrior/Berserker Attack")]
     public class BerserkerAttackStrategy : AbilityStrategySO
     {
         public override void UseAbility(GameObject caller)
