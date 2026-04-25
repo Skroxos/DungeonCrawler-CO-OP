@@ -109,3 +109,7 @@ InitTestScene*.unity*
 # Ignorování HotReload balíčku, pokud je přidán lokálně ve složce Packages
 /[Pp]ackages/com.singularitygroup.hotreload/
  
+
+/[Pp]ackages/com.kybernetik.animancer/
+/[Aa]ssets/Animancer/
+/[Aa]ssets/Animancer/.meta

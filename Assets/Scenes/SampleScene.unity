@@ -416,10 +416,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1902321926738118538, guid: 4cb8afe5cbff99049b8739f71d34a69d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 3e6a1a40345904f4dbfa75848d0bbfb4, type: 2}
     - target: {fileID: 5222338090564634367, guid: 4cb8afe5cbff99049b8739f71d34a69d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -464,10 +460,6 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2931020075
       objectReference: {fileID: 0}
-    - target: {fileID: 5733026064094525405, guid: 4cb8afe5cbff99049b8739f71d34a69d, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 1068885290
-      objectReference: {fileID: 0}
     - target: {fileID: 7266141152298425063, guid: 4cb8afe5cbff99049b8739f71d34a69d, type: 3}
       propertyPath: m_Name
       value: Healer
@@ -499,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238751482877218179, guid: 8123e1b3250db1e4c93e4c5185a8e291, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.0817375
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 5238751482877218179, guid: 8123e1b3250db1e4c93e4c5185a8e291, type: 3}
       propertyPath: m_LocalRotation.w
@@ -603,18 +595,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: 'abilities.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 45335316733a4474d939e0b92492bbc3, type: 2}
-    - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: 'abilities.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 0e4c9c142d9d29148a9571eab466781e, type: 2}
-    - target: {fileID: 466116708630540549, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
-      propertyPath: 'abilities.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 5a7f576ae82c0d743bdd3c5b68b1f447, type: 2}
     - target: {fileID: 6562570064812436173, guid: a341c50b402944e44ac8d9d5a92d53d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
