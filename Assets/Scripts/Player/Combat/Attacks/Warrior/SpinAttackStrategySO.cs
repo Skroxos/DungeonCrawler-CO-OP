@@ -1,4 +1,5 @@
-﻿using DungeonCrawler.Interfaces.IDamageable;
+﻿using Cysharp.Threading.Tasks;
+using DungeonCrawler.Interfaces.IDamageable;
 using DungeonCrawler.Player.Combat.Attacks;
 using UnityEngine;
 
@@ -10,16 +11,12 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         [Header("Spin Attack Data")]
         public float BaseDamage;
         public float AreaRadius;
+        public float SpinDuration;
+        public float Interval;
         public override void UseAbility(GameObject caller)
         {
-            var hitColliders = Physics.OverlapSphere(caller.transform.position, AreaRadius);
-            foreach (var hitCollider in hitColliders)
-            {
-                if (hitCollider.TryGetComponent(out IDamageable damageable))
-                {
-                    damageable.TakeDamage(BaseDamage);
-                }
-            }
+            var toke = caller.GetCancellationTokenOnDestroy();
+            OverTimeAttackLogic.OverTimeAttackAsync(toke, SpinDuration, BaseDamage, Interval).Forget();
         }
     }
 }
