@@ -1,9 +1,9 @@
 using System;
 
-public enum EnemyStateType {Idle, Chase, Attack, Dead}
-
 namespace DungeonCrawler.Enemy.AI.States
 {
+    public enum EnemyStateType {Idle, Chase, Attack, Dead}
+
     [Serializable]
     public abstract class EnemyState
     {

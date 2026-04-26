@@ -2,6 +2,8 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
+namespace DungeonCrawler.Player.Combat.Attacks.Warrior
+{
     public static class OverTimeAttackLogic
     {
         public static async UniTask OverTimeAttackAsync(CancellationToken ct, float duration, float dmg, float interval)
@@ -21,3 +23,4 @@ using UnityEngine;
             Debug.Log("Applying dmg: " + dmg);
         }
     }
+}

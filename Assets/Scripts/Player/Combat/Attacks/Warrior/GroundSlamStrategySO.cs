@@ -1,4 +1,4 @@
-﻿using DungeonCrawler.Interfaces.IDamageable;
+﻿using DungeonCrawler.Interfaces.IDamagable;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior

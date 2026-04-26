@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using DungeonCrawler.Interfaces.IDamageable;
 using DungeonCrawler.Player.Combat.Attacks;
 using UnityEngine;
 
