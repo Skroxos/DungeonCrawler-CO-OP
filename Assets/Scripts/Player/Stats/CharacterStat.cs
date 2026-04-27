@@ -6,46 +6,36 @@ namespace DungeonCrawler.Player.Stats
     public class CharacterStat
     {
         public float BaseValue;
-        private List<StatModifier> modifiers = new List<StatModifier>();
+        private List<StatModifier> _modifiers = new List<StatModifier>();
+        
         public CharacterStat(float baseValue)
         {
             BaseValue = baseValue;
         }
-
-        public float Value
+        
+        public void AddModifier(StatModifier modifier) => _modifiers.Add(modifier);
+        public void RemoveModifier(StatModifier modifier) => _modifiers.Remove(modifier);
+        
+        public float GetValue()
         {
-            get
-            {
-                float finalValue = BaseValue;
-                float percentAdd = 0f;
-
-                for (int i = 0; i < modifiers.Count; i++)
-                {
-                    StatModifier statModifier = modifiers[i];
-                    if (statModifier.IsMultiplier)
-                    {
-                        percentAdd += statModifier.Value;
-                    }
-                    else
-                    {
-                        finalValue += statModifier.Value;
-                    }
-                }
-                finalValue *= 1 + percentAdd;
-                return finalValue;
-            }
+          float finalValue = BaseValue;
+          float percentageAdd = 0f;
+          for (int i = 0; i < _modifiers.Count; i++)
+          {
+              StatModifier statModifier = _modifiers[i];
+              if (statModifier.IsMultiplier)
+              {
+                  percentageAdd += statModifier.Value;
+              }
+              else
+              {
+                  finalValue += statModifier.Value;
+              }
+          }
+          finalValue *= (1 + percentageAdd);
+          return finalValue;
         }
         
-        public void AddModifier(StatModifier modifier)
-        {
-            modifiers.Add(modifier);
-        }
-
-        public void RemoveModifier(StatModifier modifier)
-        {
-            modifiers.Remove(modifier);
-        }
-        
-        public List<StatModifier> GetModifiers() => modifiers;
+        public List<StatModifier> GetModifiers() => _modifiers;
     }
 }

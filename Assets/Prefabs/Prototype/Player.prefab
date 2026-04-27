@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6844106931017208017}
   - component: {fileID: 5927485099526603634}
   - component: {fileID: 5447102531974226951}
+  - component: {fileID: -3844492710803377043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1350160041
+  GlobalObjectIdHash: 2205812705
   InScenePlacedSourceGlobalObjectIdHash: 2205812705
   DeferredDespawnTick: 0
   Ownership: 1
@@ -270,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f785d0b3f9a62184fabf1704759734ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _inputReader: {fileID: 11400000, guid: 55c0df6217057f74c9ce3b2b935ae64f, type: 2}
-  _abilityController: {fileID: 5447102531974226951}
 --- !u!114 &5447102531974226951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +285,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c60f532554ad104bb1a07400c2636d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilities: []
+--- !u!114 &-3844492710803377043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205542708333847511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b201ea67df5e0f5479fadb89c5667bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  Health:
+    BaseValue: 10
+  AttackDamage:
+    BaseValue: 5
+  AttackSpeed:
+    BaseValue: 2
+  MovementSpeed:
+    BaseValue: 2
 --- !u!1 &5042891397256948662
 GameObject:
   m_ObjectHideFlags: 0

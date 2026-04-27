@@ -795,6 +795,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1777728975452837465, guid: 35f48ddca8757e04cba3d701f24a6268, type: 3}
+      propertyPath: Speed.BaseValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777728975452837465, guid: 35f48ddca8757e04cba3d701f24a6268, type: 3}
+      propertyPath: Damage.BaseValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777728975452837465, guid: 35f48ddca8757e04cba3d701f24a6268, type: 3}
+      propertyPath: Defense.BaseValue
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1844685630081140275, guid: 35f48ddca8757e04cba3d701f24a6268, type: 3}
       propertyPath: 'abilities.Array.data[0]'
       value: 

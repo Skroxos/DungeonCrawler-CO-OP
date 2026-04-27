@@ -16,5 +16,5 @@ MonoBehaviour:
   AbilityIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Cooldown: 0
   Cost: 1
-  BaseDamage: 10
+  BaseDamage: 1
   AreaRadius: 1

@@ -1,4 +1,4 @@
-﻿using DungeonCrawler.Player.Combat.Attacks;
+﻿using DungeonCrawler.Player.Stats;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
@@ -6,10 +6,21 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
     [CreateAssetMenu(menuName = "Combat/Warrior/Berserker Attack")]
     public class BerserkerAttackStrategy : AbilityStrategySO
     {
+        [Header("Berserker Attack Data")]
+        [SerializeField] private float baseDamage;
+
+        [SerializeField] private float duration;
+        
         public override void UseAbility(GameObject caller)
         {
-            // need to make buff system
-            Debug.Log("Berserker Attack used! Increasing attack speed and damage for a short duration.");
+            var playerStats = caller.GetComponent<PlayerStatsManager>();
+            if (playerStats == null)
+            {
+                Debug.LogError("PlayerStatsManager component not found on caller.");
+                return;
+            }
+            playerStats.ApplyModifiers(playerStats.Damage, baseDamage, duration, true);
+            
         }
     }
 }
