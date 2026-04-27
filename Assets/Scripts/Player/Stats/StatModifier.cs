@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace DungeonCrawler.Player.Stats
 {
     public class StatModifier
