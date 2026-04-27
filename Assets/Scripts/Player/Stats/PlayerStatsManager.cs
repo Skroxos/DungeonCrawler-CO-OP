@@ -37,11 +37,9 @@ namespace DungeonCrawler.Player.Stats
                     if (modifier.Timer >= modifier.Duration)
                     {
                         stat.RemoveModifier(modifier);
-                        Debug.Log("Modifier expired and removed.");
                     }
                 }
             }
-            Debug.Log($"Health: {Health.GetValue()}, Damage: {Damage.GetValue()}, Speed: {Speed.GetValue()}, AttackSpeed: {AttackSpeed.GetValue()}, Defense: {Defense.GetValue()}");
         }
 
         public void ApplyModifiers(CharacterStat statToModify, float value, float duration, bool isMultiplier)

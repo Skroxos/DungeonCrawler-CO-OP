@@ -14,7 +14,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         public override void UseAbility(PlayerContext caller)
         {
             var stats = caller.StatsManager;
-            var hitColliders = Physics.OverlapSphere(caller.PlayerGameObject.transform.position, AreaRadius);
+            var hitColliders = Physics.OverlapSphere(caller.PlayerGameObject.transform.position.WithY(1) , AreaRadius);
             foreach (var hitCollider in hitColliders)
             {
                 if (hitCollider.TryGetComponent(out IDamageable damageable))

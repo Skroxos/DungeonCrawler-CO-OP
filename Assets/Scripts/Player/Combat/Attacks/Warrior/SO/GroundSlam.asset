@@ -17,4 +17,4 @@ MonoBehaviour:
   Cooldown: 0
   Cost: 1
   BaseDamage: 1
-  AreaRadius: 1
+  AreaRadius: 2.5
