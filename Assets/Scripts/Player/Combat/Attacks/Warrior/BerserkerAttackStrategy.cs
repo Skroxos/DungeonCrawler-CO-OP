@@ -8,6 +8,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
     {
         public override void UseAbility(GameObject caller)
         {
+            // need to make buff system
             Debug.Log("Berserker Attack used! Increasing attack speed and damage for a short duration.");
         }
     }

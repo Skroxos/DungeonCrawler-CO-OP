@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: SpinAttack
   AbilityIcon: {fileID: 0}
-  Cooldown: 5
+  Cooldown: 0
   Cost: 0
-  BaseDamage: 2
-  AreaRadius: 0.5
-  Duration: 3
+  BaseDamage: 10
+  AreaRadius: 3
+  SpinDuration: 5
   Interval: 0.5

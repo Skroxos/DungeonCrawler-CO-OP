@@ -15,7 +15,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         public override void UseAbility(GameObject caller)
         {
             var toke = caller.GetCancellationTokenOnDestroy();
-            OverTimeAttackLogic.OverTimeAttackAsync(toke, SpinDuration, BaseDamage, Interval).Forget();
+            OverTimeAttackLogic.OverTimeAttackAsync(toke, SpinDuration, BaseDamage, Interval, AreaRadius, caller).Forget();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
     
         public override void UseAbility(GameObject caller)
         {
+            // need to make an enemy target system to get the target and apply damage to it, for now just log the attack
             Debug.Log("Skull Crusher used! Dealing " + BaseDamage + " damage to the target.");
         }
     }
