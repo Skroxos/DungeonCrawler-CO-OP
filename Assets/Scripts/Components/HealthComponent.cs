@@ -1,4 +1,4 @@
-using DungeonCrawler.Interfaces.IDamageable;
+using DungeonCrawler.Interfaces.IDamagable;
 using Unity.Netcode;
 using UnityEngine;
 

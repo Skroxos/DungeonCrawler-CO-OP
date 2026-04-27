@@ -1,4 +1,4 @@
-namespace DungeonCrawler.Interfaces.IDamageable
+namespace DungeonCrawler.Interfaces.IDamagable
 {
     public interface IDamageable
     {

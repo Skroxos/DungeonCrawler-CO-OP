@@ -1,11 +1,14 @@
 using Unity.Netcode.Components;
 using UnityEngine;
 
-[DisallowMultipleComponent]
-public class ClientNetworkTransform : NetworkTransform
+namespace DungeonCrawler
 {
-   protected override bool OnIsServerAuthoritative()
+   [DisallowMultipleComponent]
+   public class ClientNetworkTransform : NetworkTransform
    {
-      return false;
+      protected override bool OnIsServerAuthoritative()
+      {
+         return false;
+      }
    }
 }

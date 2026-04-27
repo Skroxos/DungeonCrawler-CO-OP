@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Berserk
   AbilityIcon: {fileID: 0}
-  Cooldown: 20
-  Cost: 0
+  Cooldown: 6
+  Cost: 5
+  damageBuffValue: 2
+  attackSpeedBuffValue: 1
+  duration: 5

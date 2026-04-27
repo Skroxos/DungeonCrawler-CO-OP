@@ -1,4 +1,6 @@
-﻿using DungeonCrawler.Interfaces.IDamageable;
+﻿using DungeonCrawler.Interfaces.IDamagable;
+using DungeonCrawler.Player.Context;
+using DungeonCrawler.Player.Stats;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
@@ -9,14 +11,15 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         [Header("Ground Slam Data")]
         public float BaseDamage;
         public float AreaRadius;
-        public override void UseAbility(GameObject caller)
+        public override void UseAbility(PlayerContext caller)
         {
-            var hitColliders = Physics.OverlapSphere(caller.transform.position, AreaRadius);
+            var stats = caller.StatsManager;
+            var hitColliders = Physics.OverlapSphere(caller.PlayerGameObject.transform.position, AreaRadius);
             foreach (var hitCollider in hitColliders)
             {
                 if (hitCollider.TryGetComponent(out IDamageable damageable))
                 {
-                    damageable.TakeDamage(BaseDamage);
+                    damageable.TakeDamage(BaseDamage + stats.Damage.GetValue());
                 }
             }
         

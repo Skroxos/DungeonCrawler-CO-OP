@@ -1,3 +1,4 @@
+using DungeonCrawler.Player.Context;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks
@@ -10,6 +11,6 @@ namespace DungeonCrawler.Player.Combat.Attacks
   public float Cooldown;
   public int Cost;
  
-  public abstract void UseAbility(GameObject caller);
+  public abstract void UseAbility(PlayerContext caller);
  }
 }
