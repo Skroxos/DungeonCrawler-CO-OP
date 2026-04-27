@@ -1,6 +1,5 @@
 ﻿using DungeonCrawler.Interfaces.IDamagable;
 using DungeonCrawler.Player.Context;
-using DungeonCrawler.Player.Stats;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior

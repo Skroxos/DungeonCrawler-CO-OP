@@ -4,13 +4,14 @@ using DungeonCrawler.Player.Combat.Attacks;
 using DungeonCrawler.Player.Context;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DungeonCrawler.Player.Combat
 {
     public class AbilityController : NetworkBehaviour
     {
         [SerializeField] private List<AbilityStrategySO> abilities;
-        private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
+        private Dictionary<int, float> _lastCastTimes = new Dictionary<int, float>();
         private PlayerContext _playerContext;
 
 
@@ -37,9 +38,11 @@ namespace DungeonCrawler.Player.Combat
                 Debug.Log($"Ability {ability.AbilityName} is on cooldown! Ready in {readyTime - Time.time:F1}s");
                 return;
             }
-        
+
             ability.UseAbility(_playerContext);
             _lastCastTimes[abilityIndex] = Time.time;
         }
-    }
+
+        
+}
 }

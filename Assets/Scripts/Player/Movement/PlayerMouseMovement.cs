@@ -11,6 +11,7 @@ namespace DungeonCrawler.Player.Movement
     {
         NavMeshAgent _agent;
         [SerializeField] private InputReader _inputReader;
+        GameObject _currentTarget;
 
 
         public override void OnNetworkSpawn()
@@ -33,9 +34,27 @@ namespace DungeonCrawler.Player.Movement
             _inputReader.OnMouseMoveEvent += MoveToPosition;
         }
 
+
         private void OnDisable()
         {
             _inputReader.OnMouseMoveEvent -= MoveToPosition;
+        }
+
+        private void Update()
+        {
+            if (_currentTarget != null)
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, _currentTarget.transform.position);
+                if (distanceToTarget <= _agent.stoppingDistance)
+                {
+                    _agent.isStopped = true;
+                }
+                else
+                {
+                    _agent.isStopped = false;
+                    _agent.SetDestination(_currentTarget.transform.position);
+                }
+            }
         }
         
 
@@ -44,7 +63,18 @@ namespace DungeonCrawler.Player.Movement
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                _agent.SetDestination(hit.point);
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    _currentTarget = hit.collider.gameObject;
+                    _agent.SetDestination(_currentTarget.transform.position);
+                }
+                else
+                {
+                    _agent.isStopped = false;
+                    _currentTarget = null;
+                    _agent.SetDestination(hit.point);
+                }
+                
             }
         }
 
