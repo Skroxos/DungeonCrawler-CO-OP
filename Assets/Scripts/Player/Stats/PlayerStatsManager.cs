@@ -7,11 +7,13 @@ namespace DungeonCrawler.Player.Stats
 {
     public class PlayerStatsManager : NetworkBehaviour
     {
+        [Header("Base Stats")]
         public CharacterStat Health = new CharacterStat(0);
         public CharacterStat Damage = new CharacterStat (0);
         public CharacterStat Speed = new CharacterStat (0);
         public CharacterStat AttackSpeed = new CharacterStat (0);
         public CharacterStat Defense = new CharacterStat (0);
+        
 
         private List<CharacterStat> _allStats;
 

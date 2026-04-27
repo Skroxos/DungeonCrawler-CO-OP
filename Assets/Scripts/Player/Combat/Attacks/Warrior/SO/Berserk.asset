@@ -16,5 +16,6 @@ MonoBehaviour:
   AbilityIcon: {fileID: 0}
   Cooldown: 6
   Cost: 5
-  baseDamage: 1
+  damageBuffValue: 2
+  attackSpeedBuffValue: 1
   duration: 5
