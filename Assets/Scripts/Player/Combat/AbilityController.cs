@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using DungeonCrawler.Player.Combat.Attacks;
+using DungeonCrawler.Player.Context;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,6 +11,13 @@ namespace DungeonCrawler.Player.Combat
     {
         [SerializeField] private List<AbilityStrategySO> abilities;
         private Dictionary<int,float> _lastCastTimes = new Dictionary<int,float>();
+        private PlayerContext _playerContext;
+
+
+        private void Awake()
+        {
+            _playerContext = new PlayerContext(gameObject);
+        }
 
         [ServerRpc]
         public void TryCastAbilityServerRpc(int abilityIndex)
@@ -29,7 +38,7 @@ namespace DungeonCrawler.Player.Combat
                 return;
             }
         
-            ability.UseAbility(gameObject);
+            ability.UseAbility(_playerContext);
             _lastCastTimes[abilityIndex] = Time.time;
         }
     }

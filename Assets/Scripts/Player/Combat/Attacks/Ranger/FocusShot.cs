@@ -1,3 +1,4 @@
+using DungeonCrawler.Player.Context;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Ranger
@@ -7,7 +8,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Ranger
     {
         [SerializeField] private float baseDamage;
         [SerializeField] private int castTime;
-        public override void UseAbility(GameObject caller)
+        public override void UseAbility(PlayerContext caller)
         { 
             Debug.Log("Focus Shot used!");
         }

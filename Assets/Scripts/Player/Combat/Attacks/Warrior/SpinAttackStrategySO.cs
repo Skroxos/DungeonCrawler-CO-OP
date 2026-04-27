@@ -1,5 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
-using DungeonCrawler.Player.Combat.Attacks;
+using DungeonCrawler.Player.Context;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
@@ -12,10 +12,10 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         public float AreaRadius;
         public float SpinDuration;
         public float Interval;
-        public override void UseAbility(GameObject caller)
+        public override void UseAbility(PlayerContext caller)
         {
-            var toke = caller.GetCancellationTokenOnDestroy();
-            OverTimeAttackLogic.OverTimeAttackAsync(toke, SpinDuration, BaseDamage, Interval, AreaRadius, caller).Forget();
+            var token = caller.PlayerGameObject.GetCancellationTokenOnDestroy();
+            OverTimeAttackLogic.OverTimeAttackAsync(token, SpinDuration, BaseDamage, Interval, AreaRadius, caller.PlayerGameObject).Forget();
         }
     }
 }

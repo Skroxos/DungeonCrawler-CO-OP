@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DungeonCrawler.Player.Context;
+using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
 {
@@ -8,7 +9,7 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
         [Header("Skull Crusher Data")]
         public float BaseDamage;
     
-        public override void UseAbility(GameObject caller)
+        public override void UseAbility(PlayerContext caller)
         {
             // need to make an enemy target system to get the target and apply damage to it, for now just log the attack
             Debug.Log("Skull Crusher used! Dealing " + BaseDamage + " damage to the target.");
