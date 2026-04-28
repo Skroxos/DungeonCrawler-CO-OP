@@ -1,4 +1,5 @@
 using System;
+using DungeonCrawler.Attack;
 using DungeonCrawler.Player.Input;
 using Unity.Netcode;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace DungeonCrawler.Player.Movement
     {
         NavMeshAgent _agent;
         [SerializeField] private InputReader _inputReader;
-        GameObject _currentTarget;
+        PlayerTargetManager _targetManager;
 
 
         public override void OnNetworkSpawn()
@@ -27,6 +28,7 @@ namespace DungeonCrawler.Player.Movement
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
+            _targetManager = GetComponent<PlayerTargetManager>();
         }
 
         private void OnEnable()
@@ -42,19 +44,7 @@ namespace DungeonCrawler.Player.Movement
 
         private void Update()
         {
-            if (_currentTarget != null)
-            {
-                float distanceToTarget = Vector3.Distance(transform.position, _currentTarget.transform.position);
-                if (distanceToTarget <= _agent.stoppingDistance)
-                {
-                    _agent.isStopped = true;
-                }
-                else
-                {
-                    _agent.isStopped = false;
-                    _agent.SetDestination(_currentTarget.transform.position);
-                }
-            }
+           
         }
         
 
@@ -65,13 +55,12 @@ namespace DungeonCrawler.Player.Movement
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    _currentTarget = hit.collider.gameObject;
-                    _agent.SetDestination(_currentTarget.transform.position);
+                    _targetManager.SetTarget(hit.collider.gameObject);
+                    _agent.SetDestination(hit.point);
                 }
                 else
                 {
-                    _agent.isStopped = false;
-                    _currentTarget = null;
+                    _targetManager.ClearTarget();
                     _agent.SetDestination(hit.point);
                 }
                 

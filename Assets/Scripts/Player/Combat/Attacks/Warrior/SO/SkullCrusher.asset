@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: SkullCrusher
   AbilityIcon: {fileID: 0}
-  Cooldown: 12
+  Cooldown: 1
   Cost: 9
   BaseDamage: 20
