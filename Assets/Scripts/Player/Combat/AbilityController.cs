@@ -42,7 +42,7 @@ namespace DungeonCrawler.Player.Combat
             ability.UseAbility(_playerContext);
             _lastCastTimes[abilityIndex] = Time.time;
         }
-
+    
         
 }
 }

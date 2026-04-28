@@ -41,11 +41,6 @@ namespace DungeonCrawler.Player.Movement
         {
             _inputReader.OnMouseMoveEvent -= MoveToPosition;
         }
-
-        private void Update()
-        {
-           
-        }
         
 
         private void MoveToPosition()
@@ -56,7 +51,7 @@ namespace DungeonCrawler.Player.Movement
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     _targetManager.SetTarget(hit.collider.gameObject);
-                    _agent.SetDestination(hit.point);
+                    _agent.SetDestination(_targetManager.GetTargetPosition());
                 }
                 else
                 {

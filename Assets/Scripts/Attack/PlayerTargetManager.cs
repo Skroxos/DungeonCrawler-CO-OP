@@ -15,10 +15,15 @@ namespace DungeonCrawler.Attack
             CurrentTarget = target;
          //   OnTargetChangeEvent?.Invoke();
         }
+
+        public Vector3 GetTargetPosition()
+        {
+            return CurrentTarget.transform.position;
+        }
         
         public void  ClearTarget()
         {
             CurrentTarget = null;
         }
     }
-}
+} 
