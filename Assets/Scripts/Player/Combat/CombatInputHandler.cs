@@ -20,7 +20,6 @@ namespace DungeonCrawler.Player.Combat
         {
             if (IsOwner)
             {
-                _inputReader.OnBasicAttackEvent += HandleBasicAttack;
                 _inputReader.OnAbility1Event += HandleAbility1;
                 _inputReader.OnAbility2Event += HandleAbility2;
                 _inputReader.OnAbility3Event += HandleAbility3;
@@ -33,7 +32,6 @@ namespace DungeonCrawler.Player.Combat
         {
             if (IsOwner)
             {
-                _inputReader.OnBasicAttackEvent -= HandleBasicAttack;
                 _inputReader.OnAbility1Event -= HandleAbility1;
                 _inputReader.OnAbility2Event -= HandleAbility2;
                 _inputReader.OnAbility3Event -= HandleAbility3;
@@ -42,11 +40,7 @@ namespace DungeonCrawler.Player.Combat
             }
         }
         
-
-        private void HandleBasicAttack()
-        {
-            Debug.Log("Basic Attack Triggered");
-        }
+        
 
         private void HandleAbility1()
         {
@@ -72,5 +66,10 @@ namespace DungeonCrawler.Player.Combat
         {
             Debug.Log("Dash Triggered");
         }
+
+        
     }
 }
+
+
+

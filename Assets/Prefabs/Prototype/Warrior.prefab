@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8021322882302785638, guid: 633e76bb1254bf64e892751065878600, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3844492710803377043, guid: 633e76bb1254bf64e892751065878600, type: 3}
       propertyPath: Speed.BaseValue
       value: 3

@@ -1,4 +1,5 @@
-﻿using DungeonCrawler.Player.Context;
+﻿using DungeonCrawler.Interfaces.IDamagable;
+using DungeonCrawler.Player.Context;
 using UnityEngine;
 
 namespace DungeonCrawler.Player.Combat.Attacks.Warrior
@@ -11,8 +12,22 @@ namespace DungeonCrawler.Player.Combat.Attacks.Warrior
     
         public override void UseAbility(PlayerContext caller)
         {
-            // need to make an enemy target system to get the target and apply damage to it, for now just log the attack
-            Debug.Log("Skull Crusher used! Dealing " + BaseDamage + " damage to the target.");
+            // GetCurrentTarget (z PlayerContextu) GetComponent Idamagable ... takeDamage .... EZ Clap
+            var target = caller.TargetManager.CurrentTarget;
+            
+            if (target == null)            
+            {
+                Debug.LogError("No target selected for Skull Crusher!");
+                return;
+            }
+            
+            target.TryGetComponent(out IDamageable damagable);
+            if (damagable != null)
+            {
+                damagable.TakeDamage(BaseDamage + caller.StatsManager.Damage.GetValue());
+                Debug.Log($"Skull Crusher hit {target.name} for {BaseDamage} damage!");
+            }
+
         }
     }
 }

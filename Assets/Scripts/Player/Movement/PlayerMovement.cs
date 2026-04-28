@@ -1,4 +1,3 @@
-using System;
 using DungeonCrawler.Player.Config;
 using DungeonCrawler.Player.Input;
 using Unity.Netcode;

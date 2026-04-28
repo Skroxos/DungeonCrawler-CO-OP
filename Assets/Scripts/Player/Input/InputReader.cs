@@ -8,13 +8,13 @@ namespace DungeonCrawler.Player.Input
     public class InputReader : ScriptableObject, PlayerInput.IMovementActions, PlayerInput.ICombatActions
     {
         public event Action<Vector3> MoveEvent;
+        public event Action OnMouseMoveEvent;
         
         // =========== Combat Events ===============
         public event Action OnAbility1Event;
         public event Action OnAbility2Event;
         public event Action OnAbility3Event;
         public event Action OnAbility4Event;
-        
         public event Action OnBasicAttackEvent;
         public event Action OnDashEvent;
         // ==========================================
@@ -44,7 +44,15 @@ namespace DungeonCrawler.Player.Input
         {
            MoveEvent?.Invoke(context.ReadValue<Vector3>());
         }
-        
+
+        public void OnMouseMovement(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnMouseMoveEvent?.Invoke();
+            }
+        }
+
 
         public void OnDash(InputAction.CallbackContext context)
         {
